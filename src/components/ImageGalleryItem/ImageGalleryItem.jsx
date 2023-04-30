@@ -20,13 +20,13 @@ class ImageGalleryItem extends Component {
     const { url, alt, largeImageURL } = this.props;
     return (
       <li className={styles['ImageGalleryItem']}>
-        <a className={styles['gallery__link']} href="" onClick={this.openModal}>
+        <div className={styles['gallery__link']} onClick={this.openModal}>
           <img
             className={styles['ImageGalleryItem-image']}
             src={url}
             alt={alt}
           />
-        </a>
+        </div>
         {this.state.showModal && (
           <Modal
             src={largeImageURL}
