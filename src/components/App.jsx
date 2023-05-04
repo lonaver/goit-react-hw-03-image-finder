@@ -57,14 +57,12 @@ class App extends Component {
   };
 
   render() {
-    const { photos, loading, toggleModal } = this.state;
+    const { photos, loading } = this.state;
     return (
       <div className={styles.App}>
         <SearchBar onSubmit={this.onSubmit}></SearchBar>
         {loading && <Loader></Loader>}
-        {!loading && (
-          <ImageGallery photoList={photos} onClick={toggleModal}></ImageGallery>
-        )}
+        {!loading && <ImageGallery photoList={photos}></ImageGallery>}
         {photos.length > 0 && !loading && (
           <Button onClick={this.onAddMore}></Button>
         )}
